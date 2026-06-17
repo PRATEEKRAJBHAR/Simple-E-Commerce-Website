@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios CDN Example</title>
+</head>
+<body>
+    <h1>Jai Shree Ram</h1>
+    <button id="fetchData">Fetch Data</button>
+    <!-- <div id="output"></div> -->
+    <table>
+        <thead>
+            <th>sr.no</th>
+            <th>name</th>
+            <th>phone</th>
+            <th>email</th>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+       document.getElementById("fetchData").addEventListener("click",()=>{
+        axios.get('https://jsonplaceholder.typicode.com/users').then(result=>{
+            // console.log(result);
+            let api=result.data;
+            console.log(api);
+            let output=document.getElementById("output")
+            output.innerHTML=""
+            api.map((val,i)=>{
+                // let div=document.createElement("div")
+                let row=document.createElement("tr")
+                row.innerHTML=`
+                <td>${i+1}</td>
+                 <td>${val.name}</td>
+                  <td>${val.phone}</td>
+                   <td>${val.email}</td>
+                `;
+                // div.appendChild(row)
+                // div.innerHTML=`<h1>${i+1}.${val.name}</h1><p>${val.phone}</p>`;
+              
+                output.appendChild(row)
+            })
+        }).catch(err=>{
+            console.log("object",err);
+        })
+       })
+    </script>
+</body>
+</html>
