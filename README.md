@@ -16,10 +16,10 @@ A simple and responsive e-commerce website built using only HTML and CSS. This p
 - CSS3
 
 ## Live Demo
-🔗 https://your-vercel-link.vercel.app
+🔗 simple-e-commerce-website-tan.vercel.app
 
 ## GitHub Repository
-🔗 https://github.com/your-username/repository-name
+🔗 https://github.com/PRATEEKRAJBHAR/Simple-E-Commerce-Website
 
 ## Purpose
 This project was created for practicing front-end development fundamentals and understanding how to build a static e-commerce website using only HTML and CSS.
